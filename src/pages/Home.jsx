@@ -19,7 +19,7 @@ function Home() {
       <Testimonials />
       <Contact />
       <Footer />
-      <WhatsAppButton />
+      <WhatsAppButton />   
     </>
   );
 }
