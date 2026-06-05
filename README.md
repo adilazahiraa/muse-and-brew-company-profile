@@ -32,4 +32,4 @@ A modern coffee shop website experience designed to showcase brand identity, atm
 
 ## Live Demo
 
-🔗 [https://YOUR-VERCEL-LINK.vercel.app](https://muse-and-brew-company-profile.vercel.app/)
+🔗 (https://muse-and-brew-company-profile.vercel.app/)
