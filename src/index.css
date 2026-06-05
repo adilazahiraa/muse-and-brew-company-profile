@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Marcellus&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+
+:root {
+  --cream: #f7f0df;
+  --tan: #d5b893;
+  --coffee: #6f4d38;
+  --coffee-dark: #2a160d;
+  --space-cadet: #25344f;
+  --slate-gray: #617891;
+  --caput-mortuum: #632024;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: "Manrope", sans-serif;
+  background-color: var(--cream);
+  color: var(--coffee-dark);
+}
+
+a {
+  text-decoration: none;
+}
+
+.font-syne {
+  font-family: "Syne", sans-serif;
+}
+
+.font-fraunces {
+  font-family: "Fraunces", serif;
+}
+
+.font-marcellus {
+  font-family: "Marcellus", serif;
+}
+
+.font-playfair {
+  font-family: "Playfair Display", serif;
+}
+
+.font-logo {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.font-cormorant {
+  font-family: "Cormorant Garamond", serif;
+}
+
+.font-manrope {
+  font-family: "Manrope", sans-serif;
+}
+
+/* reusable colors */
+.bg-cream {
+  background-color: var(--cream);
+}
+
+.bg-coffee {
+  background-color: var(--coffee);
+}
+
+.bg-space {
+  background-color: var(--space-cadet);
+}
+
+.text-cream {
+  color: var(--cream);
+}
+
+.text-coffee {
+  color: var(--coffee);
+}
+
+.text-space {
+  color: var(--space-cadet);
+}
+
+/* Selection */
+::selection {
+  background: var(--space-cadet);
+  color: var(--cream);
+}
+
+/* Optional smooth image rendering */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Smoke wipe from coffee - boleh dihapus kalau sudah tidak pakai semi-art */
+.smoke-wipe {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 999px;
+  background: rgba(247, 240, 223, 0.68);
+  filter: blur(40px);
+  transform: translate(-50%, -50%) scale(0.2);
+  animation: smokeWipe 1.2s ease-out forwards;
+  will-change: transform, opacity;
+}
+
+.smoke-wipe-1 {
+  width: 240px;
+  height: 240px;
+}
+
+.smoke-wipe-2 {
+  width: 320px;
+  height: 320px;
+  animation-delay: 0.12s;
+  background: rgba(247, 240, 223, 0.52);
+}
+
+.smoke-wipe-3 {
+  width: 420px;
+  height: 420px;
+  animation-delay: 0.24s;
+  background: rgba(247, 240, 223, 0.42);
+}
+
+@keyframes smokeWipe {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.15);
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0.85;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(4.2);
+  }
+}
