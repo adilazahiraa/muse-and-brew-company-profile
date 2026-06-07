@@ -88,13 +88,13 @@ function Testimonials() {
       id="review"
       className="
         relative
-        min-h-screen
         overflow-hidden
         bg-[#FDF8F2]
         px-6
-        pt-14
-        pb-6
+        py-24
+        lg:min-h-screen
         lg:px-16
+        lg:py-14
       "
     >
       <div
@@ -102,14 +102,15 @@ function Testimonials() {
           pointer-events-none
           absolute
           left-1/2
-          top-4
+          top-8
           -translate-x-1/2
           select-none
           whitespace-nowrap
           font-logo
-          text-[72px]
+          text-[58px]
           leading-none
           text-[#D5B893]/10
+          sm:text-[80px]
           md:text-[140px]
         "
       >
@@ -119,32 +120,36 @@ function Testimonials() {
       <div className="pointer-events-none absolute -top-32 right-0 h-[420px] w-[420px] rounded-full bg-[#D5B893]/20 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-40 left-0 h-[440px] w-[440px] rounded-full bg-[#4A2C2A]/10 blur-3xl" />
 
-      <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-center">
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col justify-center lg:min-h-[calc(100vh-7rem)]">
+        {/* HEADER */}
         <motion.div
-          className="mx-auto mb-5 max-w-[700px] text-center"
+          className="mx-auto mb-9 max-w-[700px] text-center lg:mb-5"
           initial={{ opacity: 0, y: 35 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.25 }}
           transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="mb-3 flex items-center justify-center gap-4">
-            <span className="h-px w-10 bg-[#B8956A]" />
-            <p className="font-manrope text-[11px] uppercase tracking-[0.3em] text-[#B8956A]">
+          <div className="mb-4 flex items-center justify-center gap-3 sm:gap-4">
+            <span className="h-px w-8 bg-[#B8956A] sm:w-10" />
+
+            <p className="font-manrope text-[10px] uppercase tracking-[0.26em] text-[#B8956A] sm:text-[11px] sm:tracking-[0.3em]">
               Testimoni / Review
             </p>
-            <span className="h-px w-10 bg-[#B8956A]" />
+
+            <span className="h-px w-8 bg-[#B8956A] sm:w-10" />
           </div>
 
-          <h2 className="font-logo text-[40px] leading-[0.95] tracking-[-0.04em] text-[#1B0F0A] md:text-[56px]">
+          <h2 className="font-logo text-[42px] leading-[0.95] tracking-[-0.04em] text-[#1B0F0A] md:text-[56px]">
             What our guests say.
           </h2>
 
-          <p className="mx-auto mt-4 max-w-[520px] font-manrope text-[14px] leading-6 text-[#5B4B3E]">
+          <p className="mx-auto mt-5 max-w-[520px] font-manrope text-[14px] leading-7 text-[#5B4B3E]">
             A few warm words from people who have spent their slow moments at
             Muse & Brew.
           </p>
         </motion.div>
 
+        {/* MAIN REVIEW */}
         <motion.div
           className="
             relative
@@ -152,15 +157,17 @@ function Testimonials() {
             w-full
             max-w-4xl
             overflow-hidden
-            rounded-[32px]
+            rounded-[30px]
             border
             border-[#D8C5AE]
-            bg-[#FFF8EF]/80
-            px-7
-            py-6
+            bg-[#FFF8EF]/82
+            px-5
+            py-7
             text-center
             shadow-[0_26px_70px_rgba(74,44,42,0.11)]
             backdrop-blur-xl
+            sm:px-7
+            md:rounded-[32px]
             md:px-12
           "
           initial={{ opacity: 0, y: 45, scale: 0.97 }}
@@ -168,9 +175,13 @@ function Testimonials() {
           viewport={{ once: false, amount: 0.25 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
+          <div className="pointer-events-none absolute -right-20 -top-20 h-44 w-44 rounded-full bg-[#D5B893]/18 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-20 -left-20 h-44 w-44 rounded-full bg-white/70 blur-3xl" />
+
           <AnimatePresence mode="wait">
             <motion.div
               key={`${activeReview.name}-${active}`}
+              className="relative z-10"
               initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               exit={{ opacity: 0, y: -24, filter: "blur(8px)" }}
@@ -183,12 +194,12 @@ function Testimonials() {
                 </span>
               </p>
 
-              <p className="mx-auto mt-4 line-clamp-3 max-w-[720px] font-logo text-[24px] leading-[1.15] tracking-[-0.03em] text-[#1B0F0A] md:text-[30px]">
+              <p className="mx-auto mt-5 line-clamp-4 max-w-[720px] font-logo text-[25px] leading-[1.18] tracking-[-0.03em] text-[#1B0F0A] md:line-clamp-3 md:text-[30px]">
                 “{activeReview.review}”
               </p>
 
-              <div className="mt-5 flex items-center justify-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#4A2C2A] font-logo text-[21px] text-[#F7EFE3]">
+              <div className="mt-6 flex items-center justify-center gap-3">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#4A2C2A] font-logo text-[22px] text-[#F7EFE3]">
                   {activeReview.name?.charAt(0) || "G"}
                 </div>
 
@@ -204,188 +215,88 @@ function Testimonials() {
             </motion.div>
           </AnimatePresence>
 
-        {reviews.length > 1 && (
-          <div className="mt-4 flex items-center justify-center gap-3">
-            <motion.button
-              type="button"
-              onClick={prevReview}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D8C5AE] bg-[#F7EFE3] text-[#4A2C2A] transition hover:bg-[#4A2C2A] hover:text-[#F7EFE3]"
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.96 }}
-            >
-              ←
-            </motion.button>
+          {reviews.length > 1 && (
+            <div className="relative z-10 mt-6 flex items-center justify-center gap-3">
+              <motion.button
+                type="button"
+                onClick={prevReview}
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D8C5AE] bg-[#F7EFE3] text-[#4A2C2A] transition hover:bg-[#4A2C2A] hover:text-[#F7EFE3]"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.96 }}
+              >
+                ←
+              </motion.button>
 
-            <motion.button
-              type="button"
-              onClick={nextReview}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D8C5AE] bg-[#F7EFE3] text-[#4A2C2A] transition hover:bg-[#4A2C2A] hover:text-[#F7EFE3]"
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.96 }}
-            >
-              →
-            </motion.button>
-          </div>
-        )}
+              <motion.button
+                type="button"
+                onClick={nextReview}
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D8C5AE] bg-[#F7EFE3] text-[#4A2C2A] transition hover:bg-[#4A2C2A] hover:text-[#F7EFE3]"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.96 }}
+              >
+                →
+              </motion.button>
+            </div>
+          )}
         </motion.div>
 
+        {/* REVIEW PREVIEW CARDS */}
         {reviews.length > 0 && (
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
-            {reviews.slice(0, 3).map((item, index) => {
-              const isActive = active === index;
+          <>
+            {/* MOBILE SWIPE */}
+            <div className="-mx-6 mt-6 flex gap-4 overflow-x-auto px-6 pb-2 md:hidden scrollbar-none">
+              {reviews.slice(0, 3).map((item, index) => {
+                const isActive = active === index;
 
-              return (
-                <motion.button
-                  key={`${item.name}-${index}`}
-                  onClick={() => setActive(index)}
-                  className={`
-                    group
-                    relative
-                    overflow-hidden
-                    rounded-[28px]
-                    border
-                    px-5
-                    py-5
-                    text-left
-                    transition-all
-                    duration-500
-                    ${
-                      isActive
-                        ? "border-[#4A2C2A] bg-[#4A2C2A] text-[#F7EFE3] shadow-[0_22px_55px_rgba(74,44,42,0.22)]"
-                        : "border-[#D8C5AE] bg-[#FFF8EF]/65 text-[#1B0F0A] hover:-translate-y-1 hover:bg-[#FFF8EF] hover:shadow-[0_18px_45px_rgba(74,44,42,0.10)]"
-                    }
-                  `}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <div
-                    className={`
-                      pointer-events-none
-                      absolute
-                      -right-12
-                      -top-12
-                      h-32
-                      w-32
-                      rounded-full
-                      blur-3xl
-                      transition
-                      ${
-                        isActive ? "bg-[#D5B893]/20" : "bg-[#D5B893]/10"
-                      }
-                    `}
+                return (
+                  <ReviewCard
+                    key={`${item.name}-${index}`}
+                    item={item}
+                    index={index}
+                    isActive={isActive}
+                    setActive={setActive}
+                    mobile
                   />
+                );
+              })}
+            </div>
 
-                  <div className="relative z-10">
-                    <div className="mb-5 flex items-center justify-between gap-4">
-                      <p
-                        className={`
-                          font-manrope
-                          text-[12px]
-                          tracking-[0.16em]
-                          ${isActive ? "text-[#D5B893]" : "text-[#B8956A]"}
-                        `}
-                      >
-                        {"★".repeat(Number(item.rating))}
-                        <span
-                          className={
-                            isActive ? "text-[#F7EFE3]/20" : "text-[#D8C5AE]"
-                          }
-                        >
-                          {"★".repeat(5 - Number(item.rating))}
-                        </span>
-                      </p>
+            {/* DESKTOP GRID */}
+            <div className="mt-6 hidden gap-4 md:grid md:grid-cols-3">
+              {reviews.slice(0, 3).map((item, index) => {
+                const isActive = active === index;
 
-                      <span
-                        className={`
-                          font-logo
-                          text-[34px]
-                          leading-none
-                          ${isActive ? "text-[#D5B893]/40" : "text-[#D5B893]/30"}
-                        `}
-                      >
-                        “
-                      </span>
-                    </div>
-
-                    <p
-                      className={`
-                        line-clamp-2
-                        min-h-[48px]
-                        font-manrope
-                        text-[14px]
-                        leading-6
-                        ${
-                          isActive
-                            ? "text-[#F7EFE3]/78"
-                            : "text-[#5B4B3E]"
-                        }
-                      `}
-                    >
-                      {item.review}
-                    </p>
-
-                    <div className="mt-5 flex items-center gap-3">
-                      <div
-                        className={`
-                          flex
-                          h-9
-                          w-9
-                          items-center
-                          justify-center
-                          rounded-full
-                          font-logo
-                          text-[19px]
-                          ${
-                            isActive
-                              ? "bg-[#D5B893] text-[#4A2C2A]"
-                              : "bg-[#4A2C2A] text-[#F7EFE3]"
-                          }
-                        `}
-                      >
-                        {item.name?.charAt(0) || "G"}
-                      </div>
-
-                      <div>
-                        <p
-                          className={`
-                            font-logo
-                            text-[24px]
-                            leading-none
-                            ${isActive ? "text-[#F7EFE3]" : "text-[#1B0F0A]"}
-                          `}
-                        >
-                          {item.name}
-                        </p>
-
-                        <p
-                          className={`
-                            mt-1
-                            font-manrope
-                            text-[9px]
-                            uppercase
-                            tracking-[0.2em]
-                            ${
-                              isActive
-                                ? "text-[#D5B893]"
-                                : "text-[#B8956A]"
-                            }
-                          `}
-                        >
-                          Guest Review
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </motion.button>
-              );
-            })}
-          </div>
+                return (
+                  <ReviewCard
+                    key={`${item.name}-${index}`}
+                    item={item}
+                    index={index}
+                    isActive={isActive}
+                    setActive={setActive}
+                  />
+                );
+              })}
+            </div>
+          </>
         )}
 
-        <div className="mt-5 flex justify-center">
+        <div className="mt-7 flex justify-center lg:mt-5">
           <motion.button
             type="button"
             onClick={() => setOpenForm(true)}
-            className="rounded-full bg-[#4A2C2A] px-7 py-3 font-manrope text-sm font-semibold text-[#F7EFE3] shadow-[0_18px_40px_rgba(74,44,42,0.22)] transition hover:bg-[#1B0F0A]"
+            className="
+              rounded-full
+              bg-[#4A2C2A]
+              px-7
+              py-3
+              font-manrope
+              text-sm
+              font-semibold
+              text-[#F7EFE3]
+              shadow-[0_18px_40px_rgba(74,44,42,0.22)]
+              transition
+              hover:bg-[#1B0F0A]
+            "
             whileHover={{ y: -3 }}
             whileTap={{ scale: 0.97 }}
           >
@@ -394,10 +305,11 @@ function Testimonials() {
         </div>
       </div>
 
+      {/* MODAL FORM */}
       <AnimatePresence>
         {openForm && (
           <motion.div
-            className="fixed inset-0 z-[999] flex items-center justify-center bg-[#120905]/55 px-5 backdrop-blur-md"
+            className="fixed inset-0 z-[999] flex items-center justify-center bg-[#120905]/55 px-5 py-8 backdrop-blur-md"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -406,7 +318,25 @@ function Testimonials() {
             <motion.form
               onSubmit={handleSubmit}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-[520px] overflow-hidden rounded-[36px] border border-[#D8C5AE] bg-[#FFF8EF] p-7 shadow-[0_30px_90px_rgba(0,0,0,0.35)]"
+              initial={{ opacity: 0, y: 26, scale: 0.96 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 26, scale: 0.96 }}
+              transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+              className="
+                relative
+                max-h-[90svh]
+                w-full
+                max-w-[520px]
+                overflow-y-auto
+                rounded-[30px]
+                border
+                border-[#D8C5AE]
+                bg-[#FFF8EF]
+                p-6
+                shadow-[0_30px_90px_rgba(0,0,0,0.35)]
+                md:rounded-[36px]
+                md:p-7
+              "
             >
               <button
                 type="button"
@@ -416,11 +346,11 @@ function Testimonials() {
                 ×
               </button>
 
-              <p className="font-manrope text-[11px] uppercase tracking-[0.28em] text-[#B8956A]">
+              <p className="font-manrope text-[10px] uppercase tracking-[0.24em] text-[#B8956A] md:text-[11px] md:tracking-[0.28em]">
                 Share Your Experience
               </p>
 
-              <h3 className="mt-3 font-logo text-[40px] leading-none text-[#1B0F0A]">
+              <h3 className="mt-3 max-w-[320px] font-logo text-[36px] leading-none text-[#1B0F0A] md:text-[40px]">
                 Write a Review
               </h3>
 
@@ -439,7 +369,15 @@ function Testimonials() {
                     type="button"
                     onClick={() => setForm({ ...form, rating: star })}
                     className={`
-                      flex h-10 w-10 items-center justify-center rounded-full border text-lg transition
+                      flex
+                      h-10
+                      w-10
+                      items-center
+                      justify-center
+                      rounded-full
+                      border
+                      text-lg
+                      transition
                       ${
                         star <= Number(form.rating)
                           ? "border-[#B8956A] bg-[#D5B893] text-[#1B0F0A]"
@@ -472,6 +410,138 @@ function Testimonials() {
         )}
       </AnimatePresence>
     </section>
+  );
+}
+
+function ReviewCard({ item, index, isActive, setActive, mobile = false }) {
+  return (
+    <motion.button
+      onClick={() => setActive(index)}
+      className={`
+        group
+        relative
+        overflow-hidden
+        rounded-[26px]
+        border
+        px-5
+        py-5
+        text-left
+        transition-all
+        duration-500
+        ${mobile ? "min-w-[78vw]" : ""}
+        ${
+          isActive
+            ? "border-[#4A2C2A] bg-[#4A2C2A] text-[#F7EFE3] shadow-[0_22px_55px_rgba(74,44,42,0.22)]"
+            : "border-[#D8C5AE] bg-[#FFF8EF]/65 text-[#1B0F0A] hover:-translate-y-1 hover:bg-[#FFF8EF] hover:shadow-[0_18px_45px_rgba(74,44,42,0.10)]"
+        }
+      `}
+      whileTap={{ scale: 0.98 }}
+    >
+      <div
+        className={`
+          pointer-events-none
+          absolute
+          -right-12
+          -top-12
+          h-32
+          w-32
+          rounded-full
+          blur-3xl
+          transition
+          ${isActive ? "bg-[#D5B893]/20" : "bg-[#D5B893]/10"}
+        `}
+      />
+
+      <div className="relative z-10">
+        <div className="mb-5 flex items-center justify-between gap-4">
+          <p
+            className={`
+              font-manrope
+              text-[12px]
+              tracking-[0.16em]
+              ${isActive ? "text-[#D5B893]" : "text-[#B8956A]"}
+            `}
+          >
+            {"★".repeat(Number(item.rating))}
+            <span className={isActive ? "text-[#F7EFE3]/20" : "text-[#D8C5AE]"}>
+              {"★".repeat(5 - Number(item.rating))}
+            </span>
+          </p>
+
+          <span
+            className={`
+              font-logo
+              text-[34px]
+              leading-none
+              ${isActive ? "text-[#D5B893]/40" : "text-[#D5B893]/30"}
+            `}
+          >
+            “
+          </span>
+        </div>
+
+        <p
+          className={`
+            line-clamp-2
+            min-h-[48px]
+            font-manrope
+            text-[14px]
+            leading-6
+            ${isActive ? "text-[#F7EFE3]/78" : "text-[#5B4B3E]"}
+          `}
+        >
+          {item.review}
+        </p>
+
+        <div className="mt-5 flex items-center gap-3">
+          <div
+            className={`
+              flex
+              h-9
+              w-9
+              items-center
+              justify-center
+              rounded-full
+              font-logo
+              text-[19px]
+              ${
+                isActive
+                  ? "bg-[#D5B893] text-[#4A2C2A]"
+                  : "bg-[#4A2C2A] text-[#F7EFE3]"
+              }
+            `}
+          >
+            {item.name?.charAt(0) || "G"}
+          </div>
+
+          <div>
+            <p
+              className={`
+                font-logo
+                text-[24px]
+                leading-none
+                ${isActive ? "text-[#F7EFE3]" : "text-[#1B0F0A]"}
+              `}
+            >
+              {item.name}
+            </p>
+
+            <p
+              className={`
+                mt-1
+                font-manrope
+                text-[9px]
+                uppercase
+                tracking-[0.2em]
+                ${isActive ? "text-[#D5B893]" : "text-[#B8956A]"}
+              `}
+            >
+              Guest Review
+            </p>
+          </div>
+        </div>
+      </div>
+    </motion.button>
   );
 }
 
