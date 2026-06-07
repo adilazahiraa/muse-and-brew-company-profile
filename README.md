@@ -4,14 +4,27 @@ A modern coffee shop website experience designed to showcase brand identity, atm
 
 ## Preview
 
-### Hero Section
+### Desktop Preview
+
+#### Hero Section
 ![Hero](./screenshots/hero.png)
 
-### Featured Menu
+#### Featured Menu
 ![Menu](./screenshots/menu.png)
 
-### Contact Section
+#### Contact Section
 ![Contact](./screenshots/contact.png)
+
+### Mobile Preview
+
+#### Mobile Hero Section
+![Mobile Hero](./screenshots/mobile-hero.png)
+
+#### Mobile Featured Menu
+![Mobile Menu](./screenshots/mobile-menu.png)
+
+#### Mobile Contact Section
+![Mobile Contact](./screenshots/mobile-contact.png)
 
 ## Features
 
@@ -22,6 +35,7 @@ A modern coffee shop website experience designed to showcase brand identity, atm
 - Floating WhatsApp Button
 - Smooth Scroll Navigation
 - Responsive Design
+- Mobile Friendly Layout
 
 ## Tech Stack
 
@@ -32,4 +46,4 @@ A modern coffee shop website experience designed to showcase brand identity, atm
 
 ## Live Demo
 
-🔗 (https://muse-and-brew-company-profile.vercel.app/)
+🔗 https://muse-and-brew-company-profile.vercel.app/
