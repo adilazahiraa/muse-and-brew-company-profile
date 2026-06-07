@@ -239,7 +239,7 @@ function About() {
                   "
                 >
                   <div className="relative z-10">
-                    <p className="mb-5 font-manrope text-[11px] text-[#B8956A] lg:hidden">
+                    <p className="hidden">
                       0{index + 1}
                     </p>
 

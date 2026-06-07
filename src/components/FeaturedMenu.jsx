@@ -493,15 +493,6 @@
                       whileTap={{ scale: 0.98 }}
                     >
                       <div className="flex min-w-0 items-center gap-3">
-                        <span
-                          className="shrink-0 font-syne text-[10px]"
-                          style={{
-                            color: isActive ? item.accent : activeItem.accent,
-                          }}
-                        >
-                          0{index + 1}
-                        </span>
-
                         <div className="min-w-0">
                           <h3 className="truncate font-logo text-[21px] leading-none text-white">
                             {item.name}
@@ -656,15 +647,6 @@
                         whileHover={{ x: 5 }}
                       >
                         <div className="flex items-center gap-4">
-                          <span
-                            className="font-syne text-[10px]"
-                            style={{
-                              color: isActive ? item.accent : activeItem.accent,
-                            }}
-                          >
-                            0{index + 1}
-                          </span>
-
                           <div>
                             <h3 className="font-logo text-[24px] leading-none text-white">
                               {item.name}

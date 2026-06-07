@@ -22,6 +22,19 @@ function Contact() {
         </>
       ),
     },
+    {
+      label: "Instagram",
+      text: (
+        <a
+          href="https://instagram.com/museandbrew"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#FBF6EE]/72 no-underline transition hover:text-[#D5B893]"
+        >
+          @museandbrew
+        </a>
+      ),
+    },
   ];
 
   return (
@@ -41,7 +54,7 @@ function Contact() {
       <div className="pointer-events-none absolute -right-40 bottom-10 h-[420px] w-[420px] rounded-full bg-[#F3E6D4]/8 blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-7xl">
-        <div className="grid items-center gap-12 lg:grid-cols-[48%_52%] lg:gap-14">
+        <div className="grid items-center gap-12 lg:grid-cols-[46%_54%] lg:gap-14">
           {/* LEFT */}
           <motion.div
             initial={{ opacity: 0, x: -45 }}
@@ -90,43 +103,50 @@ function Contact() {
               warm conversations in a space made to feel inspiring.
             </p>
 
-            <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:mt-10">
+            {/* INFO */}
+            <div
+              className="
+                mt-9
+                grid
+                gap-5
+                border-y
+                border-white/10
+                py-7
+                sm:grid-cols-3
+                lg:mt-10
+                lg:gap-6
+              "
+            >
               {infoCards.map((item) => (
                 <motion.div
                   key={item.label}
-                  whileHover={{ y: -4 }}
+                  whileHover={{ y: -3 }}
                   transition={{
                     type: "spring",
                     stiffness: 180,
                     damping: 16,
                   }}
-                  className="
-                    rounded-[28px]
-                    border
-                    border-white/10
-                    bg-white/[0.05]
-                    p-5
-                    shadow-[0_18px_45px_rgba(0,0,0,0.12)]
-                    backdrop-blur-xl
-                  "
                 >
                   <p className="font-manrope text-[10px] uppercase tracking-[0.28em] text-[#D5B893]">
                     {item.label}
                   </p>
 
-                  <p className="mt-3 font-manrope text-[14px] leading-7 text-[#FBF6EE]/72">
+                  <p className="mt-3 font-manrope text-[14px] leading-7 text-[#FBF6EE]/72 lg:text-[13px] lg:leading-6">
                     {item.text}
                   </p>
                 </motion.div>
               ))}
             </div>
 
-            <div className="mt-7 flex flex-wrap gap-3">
+            <div className="mt-8">
               <motion.a
                 href="https://maps.google.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
+                  inline-flex
+                  items-center
+                  gap-3
                   rounded-full
                   bg-[#D5B893]
                   px-7
@@ -144,6 +164,7 @@ function Contact() {
                 whileTap={{ scale: 0.97 }}
               >
                 Get Directions
+                <span>→</span>
               </motion.a>
             </div>
           </motion.div>
@@ -181,7 +202,7 @@ function Contact() {
                   w-full
                   rounded-[24px]
                   border-0
-                  md:h-[540px]
+                  md:h-[560px]
                   md:rounded-[30px]
                 "
               />

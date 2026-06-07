@@ -348,22 +348,6 @@ function Navbar() {
                       `}
                     >
                       <span>{item.name}</span>
-
-                      <span
-                        className={`
-                          text-xs
-                          transition
-                          ${
-                            isActive
-                              ? "text-[#120905]/70"
-                              : isDark
-                              ? "text-[#D5B893]/70"
-                              : "text-[#8B6A45]/70"
-                          }
-                        `}
-                      >
-                        0{index + 1}
-                      </span>
                     </motion.a>
                   );
                 })}
